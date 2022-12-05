@@ -27,7 +27,39 @@ fn escopo() {
     println!("letra = {}, tamanho = {} bytes", letra, std::mem::size_of_val(&letra));
 }
 
+
+fn condicionais() {
+    let idade: u8 = 17;
+    let responsavel_autorizou = true;
+
+    if idade > 18 {
+        println!("pode entrar na balada");
+    } else if idade > 16 && responsavel_autorizou {
+        println!("pode entrar com assinatura do responsavel");
+    } else {
+        println!("não pode entrar na balada");
+    }
+
+    //modo verboso
+    let condicao;
+     if idade > 18 {
+         condicao = "maior";
+     } else {
+         condicao = "menor";
+     }
+
+     println!("é {} de idade", condicao);
+
+
+     // modo simples
+     let condicao1 = if idade > 18 {"maior"} else {"menor"};
+
+     println!("é {} de idade", condicao1);
+}
+
 fn main() {
     soma(2, 3);
     escopo();
+    condicionais();
+
 }
